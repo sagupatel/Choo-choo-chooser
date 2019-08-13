@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <title>Train Scheduler</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron" style="background-color: rgb(33, 33, 110); color: white">
+            <h1 class="text-center">Train Schedule</h1>
+
+        </div>
+
+        <br>
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <!-- Trains-->
+                <div class="card mb-4" style="background-color: rgb(33, 33, 85); color: white">
+                    <div class="card-header">Current Schedule</div>
+                    <div class="card-body">
+                        <table class="table table-sm table-hover" id='schedule-table'>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Line</th>
+                                    <th scope="col">Destination</th>
+                                    <th scope="col">Next Arrival</th>
+                                    <th scope="col">Frequency</th>
+                                    <th scope="col">Mins Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" style="background-color: rgb(33, 33, 110); color: black">
+            <div class="col-md-12">
+                <div class="card mb-4" style="background-color: rgb(33, 33, 110); color: white">
+                    <div class="card-header">Search</div>
+                    <div class="card-body">
+
+                        <form style="background-color: rgb(33, 33, 110); color: white">
+                            <div class="form-group">
+                                <label for="name-input">Line</label>
+                                <input class="form-control" id="train-name-input" placeholder="Jordan"
+                                    type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="-input">Destination</label>
+                                <input class="form-control" id="destination-input" placeholder="United Center" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="start-input">Start Time (24h)</label>
+                                <input class="form-control" id="start-input" placeholder="0400" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label for="rate-input">Frequency</label>
+                                <input class="form-control" id="frequency-input" placeholder="15" type="text">
+                            </div>
+                            <button class="btn btn-secondary float-right" id="train-btn">Choo-choo-choose a Train</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./trainlogic.js"></script>
+
+</body>
+
+</html>
